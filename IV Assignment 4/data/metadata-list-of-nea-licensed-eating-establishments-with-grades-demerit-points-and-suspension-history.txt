@@ -1,0 +1,91 @@
+# Metadata for List of NEA Licensed Eating Establishments with Grades, Demerit Points and Suspension History
+---
+Identifier: '012e8dc8-631f-433c-aaa2-a9e975dc2ce4'
+Name: 'list-of-nea-licensed-eating-establishments-with-grades-demerit-points-and-suspension-history'
+Title: 'List of NEA Licensed Eating Establishments with Grades, Demerit Points and
+  Suspension History'
+Description:
+  - 'List of NEA licensed eating establishments with grades and track records.'
+  - 'The demerit points and suspension history is based on past 1 year.'
+  - 'You may also visit the NEA website (http://www.nea.gov.sg/public-health/food-hygiene/nea-food-establishment-licensees)”
+    for the “List of NEA Licensed Caterers with Grades, Demerit Points and Suspension
+    History”'
+Topics:
+  - 'Environment'
+Keywords:
+  - 'Food Safety'
+  - 'Food and Beverage'
+  - 'Hawker Centre'
+  - 'Hygiene'
+  - 'NEA'
+Publisher:
+  Name: 'National Environment Agency'
+  Admin 1:
+    Name: 'Goh Jie Wei'
+    Department: 'Environmental Public Health Ops'
+    Email: 'goh_jie_wei@nea.gov.sg'
+Sources:
+  - 'National Environment Agency'
+Source Url: 'http://www.nea.gov.sg/public-health/food-hygiene/nea-food-establishment-licensees'
+License: 'https://data.gov.sg/open-data-licence'
+Frequency: 'Quarterly'
+Coverage: '2015-06-11 to 2016-09-06'
+Last Updated: '2017-04-21T07:16:54.405414'
+Resources:
+  -
+    Identifier: '34f86c3e-a90c-4de9-a69f-afc86b7f31b6'
+    Title: 'List of NEA Licensed Eating Establishments'
+    Url: 'https://storage.data.gov.sg/list-of-nea-licensed-eating-establishments-with-grades-demerit-points-and-suspension-history/resources/list-of-nea-licensed-eating-establishments-2016-09-16T01-14-36Z.csv'
+    Format: 'CSV'
+    Coverage: '2015-06-11 to 2016-09-06'
+    Description: 'List of NEA licensed eating establishments with grades and track
+      records'
+    Last Updated: '2016-09-16T01:14:36.116800'
+    Schema:
+      -
+        Name: 'licensee_name'
+        Title: 'Licensee Name'
+        Type: 'text'
+        Sub Type: 'url'
+      -
+        Name: 'licence_number'
+        Title: 'Licence Number'
+        Type: 'text'
+        Sub Type: 'general'
+      -
+        Name: 'premises_address'
+        Title: 'Premises Address'
+        Type: 'text'
+        Sub Type: 'general'
+      -
+        Name: 'grade'
+        Title: 'Grade'
+        Type: 'text'
+        Sub Type: 'general'
+        Description:
+          - 'Data not available or not applicable. Licensed establishments such as
+            eating houses, food courts, canteens etc. are not subjected to the grading
+            regime as only the individual food stalls within the establishment are
+            subjected to grading.  New food establishments may not have been graded
+            yet'
+          - '"na" : Data not available or not applicable'
+      -
+        Name: 'demerit_points'
+        Title: 'Demerit Points'
+        Type: 'text'
+        Sub Type: 'general'
+        Description: '"na" : Data not available or not applicable'
+      -
+        Name: 'suspension_start_date'
+        Title: 'Suspension Start Date'
+        Type: 'datetime'
+        Sub Type: 'date'
+        Format: 'YYYY-MM-DD'
+        Description: '"na" : Data not available or not applicable'
+      -
+        Name: 'suspension_end_date'
+        Title: 'Suspension End Date'
+        Type: 'datetime'
+        Sub Type: 'date'
+        Format: 'YYYY-MM-DD'
+        Description: '"na" : Data not available or not applicable'
