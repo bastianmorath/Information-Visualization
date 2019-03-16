@@ -3,7 +3,7 @@ import pandas as pd
 from pandas.io.json import json_normalize
 
 filename = '../data/s2-corpus-00.json'
-# filename = '../data/s2-corpus-00_full.json'
+filename = '../data/s2-corpus-00_full.json'
 
 data = []
 content = open(filename, "r").read() 
@@ -43,19 +43,14 @@ df.reset_index(inplace=True)
 from dataclasses import dataclass
 
 @dataclass
-class ContributorIndex():
+class ContributorIndex:
+    years_active: float = 0.0
+    number_of_papers: float = 0.0
+    total_in_citations: float = 0.0
+	name: str = ""
 
 
-	years_active: float = 1.0
-	number_of_papers: float = 0.0
-	total_in_citations: float = 0.0
-	name: str = ''
-
-	@property
-	def index(self):
-		return 1 / (self.number_of_papers + self.years_active + self.total_in_citations)
-
-contrib_list = []
+contrib_index = ContributorIndex()
 
 
 def filter_row(row, name):
@@ -67,24 +62,22 @@ def filter_row(row, name):
 df_copy = df_original.copy(deep=True)
 for index, _ in df_original.iterrows():
 	row = df_copy.loc[index, :]
-	if len(row['authors']) != 0:
-		name = row['authors'][0]['name']
-		name_df = df_copy[df_copy.apply(lambda x: True in [a['name'] == name for a in x['authors']], axis=1)]
-		indices = name_df.index.tolist()
-		for ind in indices:
-			author_list = df_copy.loc[ind]['authors']
-			if len(author_list) == 0: # No authors left
-				df_copy.drop(df_copy.index[ind]) # Drop row
-			else:
-				df_copy.at[ind, 'authors'] = [a for a in author_list if a['name'] != name]
-		contrib_index = ContributorIndex()
-		contrib_index.name = name
+	name = row['authors'][0]['name']
+	name_df = df_copy[df_copy.apply(filter_row(name), axis=1)]
+	indices = name_df.index.tolist()
+	for ind in indices:
+		if len(df_copy.loc[ind]['authors']) == 0: # No authors left
+			df_copy.drop(df_copy.index[ind])
+		else:
+			df_copy.loc[ind]['authors'] = df_copy.loc[ind]['authors']
+		row_original = df_original.loc[ind]
+
+	if name_df.empty:
+		contrib_index.years_active = 0
+	else:
 		contrib_index.years_active =  name_df.sort_values(by='year', ascending=False).iloc[0]['year'] - name_df.sort_values(by='year', ascending=False).iloc[-1]['year'] + 1
 		contrib_index.total_in_citations = name_df['number_in_citations'].sum()
 		contrib_index.number_of_papers = len(name_df.index)
 
-		contrib_list.append(contrib_index)
+	print(contrib_index)
 
-for ci in contrib_list:
-	print(ci)
-	print(ci.index)
