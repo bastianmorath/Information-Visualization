@@ -4,28 +4,30 @@ from pandas.io.json import json_normalize
 
 filename = '../data/s2-corpus-00.json'
 # filename = '../data/s2-corpus-00_full.json'
+# filename = '../data/s2-corpus-00_quarter.json'
 
 data = []
 content = open(filename, "r").read() 
 f = json.loads("[" + content.replace("}\n{", "},\n{") + "]")
 
-df_original = json_normalize(f)[['title', 'authors', 'inCitations', 'year', 'venue']]
-
+df_original = json_normalize(f)[['inCitations',  'year', 'venue', 'title', 'authors' ]]
 
 column_names = list(df_original) + ['author']
 del column_names[0]
 df = pd.DataFrame(columns=column_names)
-
-for index, _ in df_original.iterrows():
-	row = df_original.loc[index, :].copy(deep=True)
-	authors = row['authors']
+for row in df_original.itertuples():
+	authors = row.authors
 	for dict in authors:
-		row['author'] = dict['name']
-		df = df.append(row)
+		print(list(row) +  [dict['name']])
 
+		df = df.append(pd.DataFrame(list(row) +  [dict['name']], columns=column_names))
+		
 df.reset_index(inplace=True)
 df['inCitations'] = df['inCitations'].apply(lambda x: len(x))
-df.drop(['authors'], axis=1, inplace=True)
+df.drop(['authors', 'index'], axis=1, inplace=True)
+df.sort_values(by=['author'], inplace=True)
+
+print(df)
 
 
 # Top 5 cited papers:
@@ -58,29 +60,25 @@ class ContributorIndex():
 
 contrib_list = []
 
+df['flag'] = 0
 
-# df_copy = df_original.copy(deep=True)
-authors_looked_at = []
+for index, _ in df.iterrows():
+	row = df.loc[index, :]
+	if row['flag'] != 1:
+		name = row['author']
+		name_df = df[df['author'] == name]
+		df.loc[df['author'] == name, 'flag'] = 1
+		contrib_index = ContributorIndex()
+		contrib_index.name = name
+		# name_df.fillna({'year' : 0}, inplace=True)
 
-for index, _ in df_original.iterrows():
-	df_original.at[index, 'authors'] = [a['name'] for a in df_original.at[index, 'authors']]
+		contrib_index.years_active =  int(name_df.sort_values(by='year', ascending=False).iloc[0]['year'] - name_df.sort_values(by='year', ascending=False).iloc[-1]['year'] + 1)
+		contrib_index.total_in_citations = name_df['inCitations'].sum()
+		contrib_index.number_of_papers = len(name_df.index)
 
-	row = df_original.loc[index, :]
-	for name in row['authors']:
-		if not name in authors_looked_at:
-			name_df = df_original[df_original.apply(lambda x: name in x['authors'], axis=1)].copy()
-			contrib_index = ContributorIndex()
-			contrib_index.name = name
-			name_df.fillna({'year' : 0}, inplace=True)
-
-			contrib_index.years_active =  int(name_df.sort_values(by='year', ascending=False).iloc[0]['year'] - name_df.sort_values(by='year', ascending=False).iloc[-1]['year'] + 1)
-			contrib_index.total_in_citations = name_df['inCitations'].sum()
-			contrib_index.number_of_papers = len(name_df.index)
-
-			contrib_list.append(contrib_index)
-			authors_looked_at.append(name)
+		contrib_list.append(contrib_index)
 
 # contrib_list = contrib_list.sort(key=lambda x: x.index)
-for ci in contrib_list[:10]:
+for ci in contrib_list:
 	#print(ci.name + str(round(ci.index, 2)))
 	print(ci)
