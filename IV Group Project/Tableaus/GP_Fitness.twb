@@ -1,0 +1,394 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20183.19.0319.0943                               -->
+<workbook original-version='18.1' source-build='2018.3.5 (20183.19.0319.0943)' source-platform='mac' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='fitness' inline='true' name='federated.0x7w0n31njolxo17q3igp0wr79cf' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='fitness' name='textscan.12f26bd1ducmz9195i56f1ipx8al'>
+            <connection class='textscan' directory='/Users/bastianmorath/polybox/7. Semester/CS5346 Information Visualisation/CS5346/IV Group Project/data' filename='life-expectancy.csv' password='' server='' />
+          </named-connection>
+          <named-connection caption='life-expectancy' name='textscan.0gtbyeu02i3s1t18wh4zu0959rzg'>
+            <connection class='textscan' directory='/Users/bastianmorath/polybox/7. Semester/CS5346 Information Visualisation/CS5346/IV Group Project/data' filename='life-expectancy.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.12f26bd1ducmz9195i56f1ipx8al' name='fitness.csv' table='[fitness#csv]' type='table'>
+          <columns character-set='UTF-8' header='no' locale='en' separator=','>
+            <column datatype='string' name='F1' ordinal='0' />
+            <column datatype='integer' name='F2' ordinal='1' />
+            <column datatype='string' name='F3' ordinal='2' />
+            <column datatype='string' name='F4' ordinal='3' />
+            <column datatype='string' name='F5' ordinal='4' />
+            <column datatype='string' name='F6' ordinal='5' />
+            <column datatype='string' name='F7' ordinal='6' />
+            <column datatype='string' name='F8' ordinal='7' />
+            <column datatype='string' name='F9' ordinal='8' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[fitness.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;¤&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;false&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>F1</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[F1]</local-name>
+            <parent-name>[fitness.csv]</parent-name>
+            <remote-alias>F1</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>F2</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[F2]</local-name>
+            <parent-name>[fitness.csv]</parent-name>
+            <remote-alias>F2</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>F3</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[F3]</local-name>
+            <parent-name>[fitness.csv]</parent-name>
+            <remote-alias>F3</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>F4</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[F4]</local-name>
+            <parent-name>[fitness.csv]</parent-name>
+            <remote-alias>F4</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>F5</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[F5]</local-name>
+            <parent-name>[fitness.csv]</parent-name>
+            <remote-alias>F5</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>F6</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[F6]</local-name>
+            <parent-name>[fitness.csv]</parent-name>
+            <remote-alias>F6</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>F7</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[F7]</local-name>
+            <parent-name>[fitness.csv]</parent-name>
+            <remote-alias>F7</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>F8</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[F8]</local-name>
+            <parent-name>[fitness.csv]</parent-name>
+            <remote-alias>F8</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>F9</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[F9]</local-name>
+            <parent-name>[fitness.csv]</parent-name>
+            <remote-alias>F9</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='country_name' datatype='string' name='[F1]' role='dimension' type='nominal' />
+      <column caption='Year' datatype='integer' name='[F2]' role='measure' type='quantitative' />
+      <column datatype='string' hidden='true' name='[F3]' role='dimension' type='nominal' />
+      <column caption='insuf_exercise_both_Sexes_age_standard' datatype='string' name='[F4]' role='dimension' type='nominal' />
+      <column caption='insuf_exercise_male_age_standard' datatype='string' name='[F5]' role='dimension' type='nominal' />
+      <column caption='insuf_exercise_females_age_standard' datatype='string' name='[F6]' role='dimension' type='nominal' />
+      <column caption='insuf_exercise_both_Sexes' datatype='string' name='[F7]' role='dimension' type='nominal' />
+      <column caption='insuf_exercise_male' datatype='string' name='[F8]' role='dimension' type='nominal' />
+      <column caption='insuf_exercise_female' datatype='string' name='[F9]' role='dimension' type='nominal' />
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <extract count='-1' enabled='true' units='records'>
+        <connection access_mode='readonly' authentication='auth-none' author-locale='en_US' class='hyper' dbname='/Users/bastianmorath/Documents/My Tableau Repository/Datasources/fitness.hyper' default-settings='yes' schema='Extract' sslmode='' tablename='Extract' update-time='04/06/2019 05:12:35 AM' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <refresh>
+            <refresh-event add-from-file-path='' increment-value='%null%' refresh-type='create' rows-inserted='196' timestamp-start='2019-04-06 05:12:35.400' />
+          </refresh>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>F1</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[F1]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>F1</remote-alias>
+              <ordinal>0</ordinal>
+              <family>fitness.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>196</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>F2</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[F2]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>F2</remote-alias>
+              <ordinal>1</ordinal>
+              <family>fitness.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>F4</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[F4]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>F4</remote-alias>
+              <ordinal>2</ordinal>
+              <family>fitness.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>164</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>F5</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[F5]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>F5</remote-alias>
+              <ordinal>3</ordinal>
+              <family>fitness.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>164</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>F6</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[F6]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>F6</remote-alias>
+              <ordinal>4</ordinal>
+              <family>fitness.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>163</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>F7</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[F7]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>F7</remote-alias>
+              <ordinal>5</ordinal>
+              <family>fitness.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>164</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>F8</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[F8]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>F8</remote-alias>
+              <ordinal>6</ordinal>
+              <family>fitness.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>164</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>F9</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[F9]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>F9</remote-alias>
+              <ordinal>7</ordinal>
+              <family>fitness.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>164</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' dim-percentage='0.572603' measure-ordering='alphabetic' measure-percentage='0.427397' show-structure='true' />
+      <date-options start-of-week='monday' />
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <table>
+        <view>
+          <datasources />
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+    </worksheet>
+  </worksheets>
+  <windows source-height='30'>
+    <window class='worksheet' maximized='true' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{E4053CD6-B678-4B10-8F74-C7F01C657A13}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='384' name='Sheet 1' width='384'>
+      iVBORw0KGgoAAAANSUhEUgAAAYAAAAGACAYAAACkx7W/AAAACXBIWXMAAA7DAAAOwwHHb6hk
+      AAAFXUlEQVR4nO3VMQEAIAzAMMC/5yFjRxMF/XpnZg4AOW87AIAdBgAQZQAAUQYAEGUAAFEG
+      ABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAA
+      UQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBl
+      AABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYA
+      EGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABR
+      BgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUA
+      AFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQ
+      ZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEG
+      ABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAA
+      UQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBl
+      AABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYA
+      EGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABR
+      BgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUA
+      AFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQ
+      ZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEG
+      ABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAA
+      UQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBl
+      AABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYA
+      EGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABR
+      BgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUA
+      AFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQ
+      ZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEG
+      ABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAA
+      UQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBl
+      AABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYA
+      EGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEfFxoG/IiMv0YAAAAASUVORK5CYII=
+    </thumbnail>
+  </thumbnails>
+</workbook>
